@@ -13,7 +13,8 @@ namespace UserRegistrations
             Registration reg = new Registration();
             //reg.Register();
             //reg.EmailRegistration();
-            reg.MobileRegistration();
+            //reg.MobileRegistration();
+            reg.PasswordRegistration();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -82,6 +83,28 @@ namespace UserRegistrations
                 if (obj.IsMatch(input_mobile))
                 {
                     Console.WriteLine($"'{input_mobile}' is a valid mobile number.\n");
+                }
+                else
+                {
+                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
+                }
+            }
+        }
+        public void PasswordRegistration()
+        {
+            string pattern_password_rule1 = @"^[A-Za-z0-9.-_]{8,}$";
+            string input_password_rule1 = "";
+
+            Regex obj = new Regex(pattern_password_rule1);
+
+            while (true)
+            {
+                Console.Write("Enter the password: ");
+                input_password_rule1 = Console.ReadLine();
+
+                if (obj.IsMatch(input_password_rule1))
+                {
+                    Console.WriteLine($"'{input_password_rule1}' is a valid password.\n");
                 }
                 else
                 {
