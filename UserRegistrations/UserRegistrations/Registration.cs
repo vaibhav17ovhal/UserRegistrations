@@ -11,7 +11,7 @@ namespace UserRegistrations
     {
         public void Register()
         {
-            string pattern_name = @"^[A-Z][a-z]{2,}";
+            string pattern_name = @"^[A-Z][a-z]{2,}$"; //Vaibhav
             string input_name = "";
 
             Regex obj = new Regex(pattern_name);
@@ -38,6 +38,28 @@ namespace UserRegistrations
                 {
                     Console.WriteLine($"'{input_name}' is a valid last Name.\n");
                     //break;
+                }
+                else
+                {
+                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
+                }
+            }
+        }
+        public void EmailRegistration()
+        {
+            string pattern_email = @"^[A-Za-z.-_]{3,}[@][A-Za-z]{2,}[.][A-Za-z]{2,3}[.]{0,1}[A-Za-z]{0,2}$"; //abc.xyz@bl.co.in
+            string input_email = "";
+
+            Regex obj = new Regex(pattern_email);
+
+            while (true)
+            {
+                Console.Write("Enter your email: ");
+                input_email = Console.ReadLine();
+
+                if (obj.IsMatch(input_email))
+                {
+                    Console.WriteLine($"'{input_email}' is a valid Email.\n");
                 }
                 else
                 {
