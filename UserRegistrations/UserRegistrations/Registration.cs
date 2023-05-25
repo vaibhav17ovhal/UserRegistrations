@@ -92,7 +92,7 @@ namespace UserRegistrations
         }
         public void PasswordRegistration()
         {
-            string pattern_password_rule1 = @"^[A-Za-z0-9.-_]{8,}$";
+            string pattern_password_rule1 = @"^[A-Z][A-Za-z0-9.-_]{7,}$";
             string input_password_rule1 = "";
 
             Regex obj = new Regex(pattern_password_rule1);
